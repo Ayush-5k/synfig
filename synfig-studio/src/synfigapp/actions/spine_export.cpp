@@ -2,8 +2,6 @@
 /*! \file spine_export.cpp
 ** \brief Spine Export Implementation
 **
-** \legal
-** Copyright (c) 2025 Ayush Satpathy
 **
 ** This file is part of Synfig.
 **

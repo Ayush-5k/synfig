@@ -2,9 +2,6 @@
 /*! \file spine_export.h
 ** \brief Spine JSON Export Header File
 **
-** \legal
-** Copyright (c) 2025 Ayush Satpathy
-**
 ** This file is part of Synfig.
 **
 ** Synfig is free software: you can redistribute it and/or modify
