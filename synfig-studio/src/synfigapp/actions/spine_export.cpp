@@ -47,8 +47,8 @@ ACTION_SET_VERSION(Action::SpineExport, "0.1");
 
 Action::SpineExport::SpineExport() {}
 
-Action::ParamVocab 
-Action::SpineExport::get_param_vocab() {
+
+Action::ParamVocab Action::SpineExport::get_param_vocab() {
     ParamVocab ret;
     ret.push_back(ParamDesc("canvas", Param::TYPE_CANVAS)
         .set_local_name(_("Canvas"))
