@@ -47,8 +47,8 @@ ACTION_SET_VERSION(Action::SpineExport, "0.1");
 
 Action::SpineExport::SpineExport() {}
 
-
-Action::ParamVocab Action::SpineExport::get_param_vocab() {
+Action::ParamVocab 
+Action::SpineExport::get_param_vocab() {
     ParamVocab ret;
     ret.push_back(ParamDesc("canvas", Param::TYPE_CANVAS)
         .set_local_name(_("Canvas"))
@@ -56,11 +56,13 @@ Action::ParamVocab Action::SpineExport::get_param_vocab() {
     return ret;
 }
 
-bool Action::SpineExport::is_candidate(const ParamList &x) {
+bool 
+Action::SpineExport::is_candidate(const ParamList &x) {
     return candidate_check(get_param_vocab(), x);
 }
 
-bool Action::SpineExport::set_param(const synfig::String& name, const Action::Param &param) {
+bool 
+Action::SpineExport::set_param(const synfig::String& name, const Action::Param &param) {
     if (name == "canvas" && param.get_type() == Param::TYPE_CANVAS) {
         canvas_ = param.get_canvas();
         return true;
@@ -68,11 +70,13 @@ bool Action::SpineExport::set_param(const synfig::String& name, const Action::Pa
     return false;
 }
 
-bool Action::SpineExport::is_ready() const {
+bool
+Action::SpineExport::is_ready() const {
     return canvas_.operator bool();
 }
 
-void Action::SpineExport::prepare() {
+void 
+Action::SpineExport::prepare() {
     if (!first_time()) return;
     
     if (!canvas_) {
@@ -82,7 +86,8 @@ void Action::SpineExport::prepare() {
     export_to_spine_json(canvas_, "spine_export.json");
 }
 
-void synfigapp::Action::SpineExport::export_to_spine_json(const synfig::Canvas::Handle&, const synfig::String& filename) {
+void 
+synfigapp::Action::SpineExport::export_to_spine_json(const synfig::Canvas::Handle&, const synfig::String& filename) {
     // Hardcoded JSON structure for Spine export
     synfig::String spine_json = R"(
     {
