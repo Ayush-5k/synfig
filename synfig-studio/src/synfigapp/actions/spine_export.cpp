@@ -48,7 +48,8 @@ ACTION_SET_VERSION(Action::SpineExport, "0.1");
 Action::SpineExport::SpineExport() {}
 
 
-Action::ParamVocab Action::SpineExport::get_param_vocab() {
+Action::ParamVocab 
+Action::SpineExport::get_param_vocab() {
     ParamVocab ret;
     ret.push_back(ParamDesc("canvas", Param::TYPE_CANVAS)
         .set_local_name(_("Canvas"))
@@ -57,7 +58,7 @@ Action::ParamVocab Action::SpineExport::get_param_vocab() {
 }
 
 bool 
-Action::SpineExport::is_candidate(const ParamList &x) {
+Action::SpineExport::is_candidate(const ParamList& x) {
     return candidate_check(get_param_vocab(), x);
 }
 
@@ -77,10 +78,12 @@ Action::SpineExport::is_ready() const {
 
 void 
 Action::SpineExport::prepare() {
-    if (!first_time()) return;
+    if (!first_time()) {
+        return;
+    }
     
     if (!canvas_) {
-        throw Error(("No valid canvas to export"));
+        throw Error(_("No valid canvas to export"));
     }
     
     export_to_spine_json(canvas_, "spine_export.json");

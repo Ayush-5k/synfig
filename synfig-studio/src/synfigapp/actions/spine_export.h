@@ -20,16 +20,16 @@
 */
 /* ========================================================================= */
 
-#ifndef __SYNFIG_APP_ACTION_SPINEEXPORT_H
-#define __SYNFIG_APP_ACTION_SPINEEXPORT_H
+#ifndef SYNFIG_APP_ACTION_SPINE_EXPORT_H
+#define SYNFIG_APP_ACTION_SPINE_EXPORT_H
 
 /* === H E A D E R S ======================================================= */
 
 #include <synfig/layer.h>
-#include <synfigapp/action.h>
 #include <synfig/canvas.h>
 #include <synfig/string.h>
-#include <fstream>
+#include <synfigapp/action.h>
+
 
 /* === C L A S S E S & S T R U C T S ======================================= */
 
