@@ -47,9 +47,6 @@ ACTION_SET_VERSION(Action::SpineExport, "0.1");
 
 Action::SpineExport::SpineExport() {}
 
-synfig::String Action::SpineExport::get_local_name() const {
-    return ("Export to Spine JSON");
-}
 
 Action::ParamVocab Action::SpineExport::get_param_vocab() {
     ParamVocab ret;
